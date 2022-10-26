@@ -1,0 +1,22 @@
+name = "vk2telegram"
+main = "src/index.ts"
+compatibility_date = "2022-10-20"
+
+[triggers]
+crons = ["*/29 * * * *"]
+
+kv_namespaces = [
+  { binding = "KV", preview_id = "...", id = "..." }
+]
+
+[vars]
+DEBUG = false
+VK_SOURCE_ID = "ID of VK group/person"
+CHAT_ID = "@receiving_channel_name or id"
+APPEND_TEXT = ""
+
+# The necessary secrets are:
+# - VK_KEY
+# - TG_TOKEN
+# Run `echo <VALUE> | wrangler secret put <NAME>` for each of these
+
